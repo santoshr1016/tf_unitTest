@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kubernetes
+  labels:
+    app.kubernetes.io/name: lights
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/component: application
+    app.kubernetes.io/part-of: wordpress
+    app.kubernetes.io/managed-by: helm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-kubernetes
+  template:
+    metadata:
+      labels:
+        app: hello-kubernetes
+    spec:
+      containers:
+      - name: hello-kubernetes
+        image: santoshr1016/lights
+        ports:
+        - containerPort: 8080
