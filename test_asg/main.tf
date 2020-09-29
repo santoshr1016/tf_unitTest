@@ -1,7 +1,3 @@
-# How to run
-# opa eval --format pretty --data terraform.rego --input tfplan.json "data.terraform.analysis.authz"
-# opa eval --format pretty --data terraform.rego --input tfplan.json "data.terraform.analysis.score"
-
 provider "aws" {
     region = "us-east-1"
 }
